@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '/src/Assets/gussy.png'; // Import the logo image
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,7 +44,7 @@ const Header: React.FC = () => {
         <div className="absolute left-1/2 transform -translate-x-1/2">
           <Link to="/" className="flex-shrink-0">
             <img 
-              src="/src/Assets/gussy.png" 
+              src={logo}  // Use the imported logo variable
               alt="Logo" 
               style={{ height: '90px' }} 
               className="w-auto"

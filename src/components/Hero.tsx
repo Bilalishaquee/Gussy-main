@@ -1,6 +1,6 @@
 import React from 'react';
 import desktopImg from '../Assets/hero.png';
-import mobileImg from '../Assets/heromob.png';
+import mobileImg from '../Assets/hero.png';
 
 const Hero: React.FC = () => {
   return (

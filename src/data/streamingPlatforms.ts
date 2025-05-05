@@ -1,3 +1,6 @@
+// First import your local images
+import slingTvLogo from "../Assets/3.png";
+import paramountLogo from "../Assets/2.png";
 
 export const streamingPlatforms = [
   {
@@ -20,22 +23,19 @@ export const streamingPlatforms = [
     name: "Apple TV+",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Apple_TV_Plus_Logo.svg/2560px-Apple_TV_Plus_Logo.svg.png"
   },
-  
-  
-    {
-      id: 5,
-      name: "Hulu",
-      logo: "https://cdn.freebiesupply.com/logos/thumbs/2x/hulu-2-logo.png"
-    },
-    {
-      id: 6,
-      name: "Sling TV",
-      logo: "/src/Assets/3.png"
-    },
-    {
-      id: 7,
-      name: "Paramount+",
-      logo: "/src/Assets/2.png"
-    }
-  
+  {
+    id: 5,
+    name: "Hulu",
+    logo: "https://cdn.freebiesupply.com/logos/thumbs/2x/hulu-2-logo.png"
+  },
+  {
+    id: 6,
+    name: "Sling TV",
+    logo: slingTvLogo  // Use the imported local image
+  },
+  {
+    id: 7,
+    name: "Paramount+",
+    logo: paramountLogo  // Use the imported local image
+  }
 ];
