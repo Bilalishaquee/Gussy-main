@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply antialiased m-0 p-0 w-full h-full bg-white text-black overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+  }
+}
+
+@layer components {
+  /* Floating animation */
+  .floating-dress {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Slider components */
+  .slider-container {
+    @apply overflow-hidden relative;
+  }
+
+  .slider-track {
+    @apply flex transition-transform duration-300 ease-in-out;
+  }
+
+  .slider-item {
+    @apply flex-none w-full;
+  }
+
+  /* Footer components */
+  .footer-grid {
+    @apply grid grid-cols-4 gap-8 py-12 px-4 border-t border-gray-200;
+  }
+
+  .footer-section {
+    @apply flex flex-col gap-11;
+  }
+
+  /* Mobile-first (default) */
+  .responsive-grid {
+    @apply grid grid-cols-1 gap-4;
+  }
+
+  .responsive-title {
+    @apply text-2xl font-bold;
+  }
+
+  .responsive-img {
+    @apply w-full h-64 object-cover;
+  }
+
+  .responsive-button {
+    @apply px-4 py-2 bg-black text-white rounded-lg;
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .responsive-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+    }
+
+    .footer-grid {
+      @apply grid-cols-2 gap-4 py-8 px-2;
+    }
+
+    .footer-section {
+      @apply items-center text-center;
+    }
+
+    .responsive-title {
+      @apply text-xl text-center;
+    }
+
+    .responsive-img {
+      @apply h-48;
+    }
+
+    .slider-item {
+      @apply w-screen px-2;
+    }
+  }
+
+  /* Tablet adjustments */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .responsive-grid {
+      @apply grid-cols-2 gap-6;
+    }
+
+    .footer-grid {
+      @apply grid-cols-3 gap-6 py-10 px-4;
+    }
+
+    .slider-item {
+      @apply w-[50vw];
+    }
+  }
+
+  /* Desktop adjustments */
+  @media (min-width: 1025px) {
+    .responsive-grid {
+      @apply grid-cols-4 gap-8;
+    }
+
+    .footer-grid {
+      @apply grid-cols-4 gap-8 py-12 px-8;
+    }
+
+    .slider-item {
+      @apply w-[33.33vw];
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
