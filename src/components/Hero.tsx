@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
         <img
           src={ImgMobile}
           alt="Hero Background Mobile"
-          className="block sm:hidden w-full h-[60vh] object-cover"
+          className="block sm:hidden w-full h-[45vh] object-cover"
         />
       </div>
 
