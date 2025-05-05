@@ -1,7 +1,7 @@
-import gown1 from '../assets/HOMEPAGE/13.png';
-import gown2 from '../assets/HOMEPAGE/14.png';
-import gown3 from '../assets/HOMEPAGE/15.png';
-import gown4 from '../assets/HOMEPAGE/16.png';
+import gown1 from '../Assets/HOMEPAGE/13.png';
+import gown2 from '../Assets/HOMEPAGE/14.png';
+import gown3 from '../Assets/HOMEPAGE/15.png';
+import gown4 from '../Assets/HOMEPAGE/16.png';
 
 export const topPicks = [
   {

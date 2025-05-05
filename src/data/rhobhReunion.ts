@@ -1,7 +1,7 @@
-import rhobh1 from '../assets/HOMEPAGE/28.png';
-import rhobh2 from '../assets/HOMEPAGE/29.png';
-import rhobh3 from '../assets/HOMEPAGE/30.png';
-import rhobh4 from '../assets/HOMEPAGE/31.png';
+import rhobh1 from '../Assets/HOMEPAGE/28.png';
+import rhobh2 from '../Assets/HOMEPAGE/29.png';
+import rhobh3 from '../Assets/HOMEPAGE/30.png';
+import rhobh4 from '../Assets/HOMEPAGE/31.png';
 
 export const rhobhReunion = [
   {

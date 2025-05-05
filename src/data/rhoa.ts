@@ -1,7 +1,7 @@
-import rhoa1 from '../assets/HOMEPAGE/36.png';
-import rhoa2 from '../assets/HOMEPAGE/37.png';
-import rhoa3 from '../assets/HOMEPAGE/38.png';
-import rhoa4 from '../assets/HOMEPAGE/39.png';
+import rhoa1 from '../Assets/HOMEPAGE/36.png';
+import rhoa2 from '../Assets/HOMEPAGE/37.png';
+import rhoa3 from '../Assets/HOMEPAGE/38.png';
+import rhoa4 from '../Assets/HOMEPAGE/39.png';
 
 export const rhoa = [
   {

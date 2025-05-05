@@ -1,7 +1,7 @@
-import summer1 from '../assets/HOMEPAGE/32.png';
-import summer2 from '../assets/HOMEPAGE/33.png';
-import summer3 from '../assets/HOMEPAGE/34.png';
-import summer4 from '../assets/HOMEPAGE/35.png';
+import summer1 from '../Assets/HOMEPAGE/32.png';
+import summer2 from '../Assets/HOMEPAGE/33.png';
+import summer3 from '../Assets/HOMEPAGE/34.png';
+import summer4 from '../Assets/HOMEPAGE/35.png';
 
 export const summerHouse = [
   {

@@ -1,15 +1,15 @@
-import latest1 from '../assets/HOMEPAGE/1.png';
-import latest2 from '../assets/HOMEPAGE/2.png';
-import latest3 from '../assets/HOMEPAGE/3.png';
-import latest4 from '../assets/HOMEPAGE/4.png';
-import latest5 from '../assets/HOMEPAGE/5.png';
-import latest6 from '../assets/HOMEPAGE/6.png';
-import latest7 from '../assets/HOMEPAGE/7.png';
-import latest8 from '../assets/HOMEPAGE/8.png';
-import latest9 from '../assets/HOMEPAGE/9.png';
-import latest10 from '../assets/HOMEPAGE/10.png';
-import latest11 from '../assets/HOMEPAGE/11.png';
-import latest12 from '../assets/HOMEPAGE/12.png';
+import latest1 from '../Assets/HOMEPAGE/1.png';
+import latest2 from '../Assets/HOMEPAGE/2.png';
+import latest3 from '../Assets/HOMEPAGE/3.png';
+import latest4 from '../Assets/HOMEPAGE/4.png';
+import latest5 from '../Assets/HOMEPAGE/5.png';
+import latest6 from '../Assets/HOMEPAGE/6.png';
+import latest7 from '../Assets/HOMEPAGE/7.png';
+import latest8 from '../Assets/HOMEPAGE/8.png';
+import latest9 from '../Assets/HOMEPAGE/9.png';
+import latest10 from '../Assets/HOMEPAGE/10.png';
+import latest11 from '../Assets/HOMEPAGE/11.png';
+import latest12 from '../Assets/HOMEPAGE/12.png';
 
 
 export const latestOutfits = [

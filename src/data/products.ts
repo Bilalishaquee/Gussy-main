@@ -1,16 +1,16 @@
 // products.js or HomePage.js (depending where you use it)
-import dress1 from '../assets/HOMEPAGE/1.png';
-import dress2 from '../assets/HOMEPAGE/2.png';
-import dress3 from '../assets/HOMEPAGE/3.png';
-import dress4 from '../assets/HOMEPAGE/4.png';
-import dress5 from '../assets/HOMEPAGE/5.png';
-import dress6 from '../assets/HOMEPAGE/6.png';
-import dress7 from '../assets/HOMEPAGE/7.png';
-import dress8 from '../assets/HOMEPAGE/8.png';
-import dress9 from '../assets/HOMEPAGE/9.png';
-import dress10 from '../assets/HOMEPAGE/10.png';
-import dress11 from '../assets/HOMEPAGE/11.png';
-import dress12 from '../assets/HOMEPAGE/12.png';
+import dress1 from '../Assets/HOMEPAGE/1.png';
+import dress2 from '../Assets/HOMEPAGE/2.png';
+import dress3 from '../Assets/HOMEPAGE/3.png';
+import dress4 from '../Assets/HOMEPAGE/4.png';
+import dress5 from '../Assets/HOMEPAGE/5.png';
+import dress6 from '../Assets/HOMEPAGE/6.png';
+import dress7 from '../Assets/HOMEPAGE/7.png';
+import dress8 from '../Assets/HOMEPAGE/8.png';
+import dress9 from '../Assets/HOMEPAGE/9.png';
+import dress10 from '../Assets/HOMEPAGE/10.png';
+import dress11 from '../Assets/HOMEPAGE/11.png';
+import dress12 from '../Assets/HOMEPAGE/12.png';
 
 export const products = [
   {
