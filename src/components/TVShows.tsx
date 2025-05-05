@@ -109,3 +109,4 @@ export const tvShows = [
     image: img18
   }
 ];
+export default tvShows;
