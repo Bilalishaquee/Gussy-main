@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductDetails from '../components/ProductDetails';
+// import ProductDetails from '../components/ProductDetails';
 import Moreitems from '../components/Moreitems';
 import Loveisland from '../components/loveisland';
 import More from '../components/Morelatest';
@@ -10,8 +10,8 @@ import Layout from '../components/Layout/Layout';
 const ProductPage: React.FC = () => {
  
   return (
-    <>
-    <Layout>
+    // <>
+    // <Layout>
       <div className="container mx-auto px-4 py-8">
         
         {/* Product Images + Details Section */}
@@ -83,8 +83,8 @@ const ProductPage: React.FC = () => {
         <More/>
   
       </div>
-    </Layout>
-    </>
+    // </Layout>
+    // </>
   );
 };
 

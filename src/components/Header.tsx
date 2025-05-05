@@ -57,6 +57,10 @@ const Header: React.FC = () => {
           <Link to="/shows" className="hover:text-gray-300 transition-colors">Shows</Link>
           <Link to="/celebrity" className="hover:text-gray-300 transition-colors">Celebrities</Link>
           <Link to="/fashion" className="hover:text-gray-300 transition-colors">Shop All</Link>
+          <Link to="/about" className="hover:text-gray-300 transition-colors">About US</Link>
+          <Link to="/get-in-touch" className="hover:text-gray-300 transition-colors">Contact US</Link>
+          <Link to="/terms" className="hover:text-gray-300 transition-colors">Terms</Link>
+          <Link to="/product" className="hover:text-gray-300 transition-colors">Products</Link>
         </nav>
 
         {/* Right: Search bar (desktop) */}

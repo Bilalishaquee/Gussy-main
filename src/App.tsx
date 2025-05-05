@@ -55,7 +55,7 @@ function App() {
         <Route path="/celebrity" element={<Celbrity />} />
         <Route path="/shows" element={<Shows />} />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/product/:id" element={<Product />} />
+        <Route path="/product" element={<Product />} />
         <Route path="/about" element={<About />} />
         <Route path="/get-in-touch" element={<Getin />} />
         <Route path="*" element={<div className="p-10 text-center text-lg">404 - Page Not Found</div>} />
