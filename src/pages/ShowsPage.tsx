@@ -35,42 +35,42 @@ const ShowsPage: React.FC = () => {
           id: 1,
           title: 'Kyle Richards',
           image: showImage2,
-          network: 'BRAVO',
+          network: ' ',
           name: 'Kyle Richards'
         },
         {
           id: 2,
           title: 'Dorit Kemsley',
           image: showImage3,
-          network: 'BRAVO',
+          network: ' ',
           name: 'Dorit Kemsley'
         },
         {
           id: 3,
           title: 'Sutton Stracke',
           image: showImage4,
-          network: 'BRAVO',
+          network: ' ',
           name: 'Sutton Stracke'
         },
         {
           id: 4,
           title: 'Kathy Hilton',
           image: showImage5,
-          network: 'BRAVO',
+          network: ' ',
           name: 'Kathy Hilton'
         },
         {
           id: 5,
           title: 'Erika Jayne',
           image: showImage6,
-          network: 'BRAVO',
+          network: ' ',
           name: 'Erika Jayne'
         },
         {
           id: 6,
           title: 'Crystal Kung Minkoff',
           image: showImage7,
-          network: 'BRAVO',
+          network: ' ',
           name: 'Crystal Kung Minkoff'
         },
       ];
@@ -171,7 +171,7 @@ const ShowsPage: React.FC = () => {
             image={profileImage}
             show="The Real Housewives of Salt Lake City"
             location="Salt Lake City"
-            network="Bravo TV"
+            network="  TV"
             description="Angie Katsanevas is known for her statement making style and her signature sunglasses. Her outfits are bold and bright, and she is always giving her signature over the top style that we love. Angie is always rocking the latest designers and never comes to play when it comes to her looks."
           />
         </div>

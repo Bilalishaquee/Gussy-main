@@ -18,12 +18,18 @@ const TopPicks: React.FC = () => {
   }, []);
 
   const nextSlide = () => {
-    setActiveIndex((current) => (current + visibleSlides) % topPicks.length);
+    setActiveIndex((current) =>
+      current + visibleSlides < topPicks.length
+        ? current + 1
+        : 0
+    );
   };
-
+  
   const prevSlide = () => {
-    setActiveIndex((current) => 
-      (current - visibleSlides + topPicks.length) % topPicks.length
+    setActiveIndex((current) =>
+      current - 1 >= 0
+        ? current - 1
+        : Math.max(topPicks.length - visibleSlides, 0)
     );
   };
 

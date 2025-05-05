@@ -27,37 +27,37 @@ const CelebrityPage: React.FC = () => {
       id: 1,
       title: '',
       image: showImage1,
-      network: 'BRAVO',
+      network: ' ',
     },
     {
       id: 2,
       title: '',
       image: showImage2,
-      network: 'BRAVO',
+      network: ' ',
     },
     {
       id: 3,
       title: '',
       image: showImage3,
-      network: 'BRAVO',
+      network: ' ',
     },
     {
       id: 4,
       title: '',
       image: showImage1,
-      network: 'BRAVO',
+      network: ' ',
     },
     {
       id: 5,
       title: '',
       image: showImage2,
-      network: 'BRAVO',
+      network: ' ',
     },
     {
       id: 6,
       title: '',
       image: showImage3,
-      network: 'BRAVO',
+      network: ' ',
     },
   ];
 
@@ -85,7 +85,7 @@ const CelebrityPage: React.FC = () => {
             image={profileImage}
             show="The Real Housewives of Salt Lake City"
             location="Salt Lake City"
-            network="Bravo TV"
+            network="  TV"
             description="Angie Katsanevas is known for her statement making style and her signature sunglasses. Her outfits are bold and bright, and she is always giving her signature over the top style that we love. Angie is always rocking the latest designers and never comes to play when it comes to her looks."
           />
         </div>
