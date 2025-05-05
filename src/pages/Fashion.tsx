@@ -1,17 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Search } from 'lucide-react';
-import product1 from '../assets/HOMEPAGE/1.png';
-import product2 from '../assets/HOMEPAGE/2.png';
-import product3 from '../assets/HOMEPAGE/3.png';
-import product4 from '../assets/HOMEPAGE/4.png';
-import product5 from '../assets/HOMEPAGE/5.png';
-import product6 from '../assets/HOMEPAGE/6.png';
-import product7 from '../assets/HOMEPAGE/7.png';
-import product8 from '../assets/HOMEPAGE/8.png';
-import product9 from '../assets/HOMEPAGE/9.png';
-import product10 from '../assets/HOMEPAGE/10.png';
-import product11 from '../assets/HOMEPAGE/11.png';
-import product12 from '../assets/HOMEPAGE/12.png';
+import product1 from '../Assets/HOMEPAGE/1.png';
+import product2 from '../Assets/HOMEPAGE/2.png';
+import product3 from '../Assets/HOMEPAGE/3.png';
+import product4 from '../Assets/HOMEPAGE/4.png';
+import product5 from '../Assets/HOMEPAGE/5.png';
+import product6 from '../Assets/HOMEPAGE/6.png';
+import product7 from '../Assets/HOMEPAGE/7.png';
+import product8 from '../Assets/HOMEPAGE/8.png';
+import product9 from '../Assets/HOMEPAGE/9.png';
+import product10 from '../Assets/HOMEPAGE/10.png';
+import product11 from '../Assets/HOMEPAGE/11.png';
+import product12 from '../Assets/HOMEPAGE/12.png';
 
 // Data arrays
 const shows = [
