@@ -76,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({
         )}
 
         {/* Desktop navigation */}
-        <nav className="hidden md:flex space-x-8"style={{marginLeft:'-100px'}}>
+        <nav className="hidden md:flex space-x-8">
           <Link to="/shows" className={`${hoverColor} transition-colors`}>Shows</Link>
           <Link to="/celebrity" className={`${hoverColor} transition-colors`}>Celebrities</Link>
           <Link to="/fashion" className={`${hoverColor} transition-colors`}>Shop All</Link>
