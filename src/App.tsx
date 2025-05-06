@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route ,useLocation  } from 'react-router-dom';
 
 // Shared Components
 import Header from './components/Header';
@@ -29,9 +29,22 @@ import { summerHouse } from './data/summerHouse';
 import { rhoa } from './data/rhoa';
 
 function App() {
+
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  const lightHeaderPages = ['/celebrity', '/shows', '/product'];
+
+  const shouldHaveLightHeader = lightHeaderPages.includes(location.pathname);
+  const shouldUseSecondaryLogo = lightHeaderPages.includes(location.pathname);
+
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <Header 
+        variant={shouldHaveLightHeader ? 'light' : 'dark'} 
+        hideLogo={isHomePage}
+        useSecondaryLogo={shouldUseSecondaryLogo}
+      />
       <Routes>
         <Route
           path="/"

@@ -12,6 +12,7 @@ import product9 from '../Assets/HOMEPAGE/9.png';
 import product10 from '../Assets/HOMEPAGE/10.png';
 import product11 from '../Assets/HOMEPAGE/11.png';
 import product12 from '../Assets/HOMEPAGE/12.png';
+import layout from '../components/Layout/Layout';
 
 // Data arrays
 const shows = [
@@ -79,6 +80,7 @@ const Fashion: React.FC = () => {
   }, []);
 
   return (
+  
     <div className="min-h-screen bg-black text-white" ref={ref}>
       {/* Hero Section */}
       <div className="relative h-[300px] md:h-[400px] flex items-center justify-center text-white px-4">
@@ -382,3 +384,4 @@ const Fashion: React.FC = () => {
 };
 
 export default Fashion;
+

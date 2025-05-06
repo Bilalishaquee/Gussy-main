@@ -4,7 +4,7 @@ import ImgMobile from '../Assets/hel.png'; // 📱 mobile image
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative bg-[#1c1c1c] text-white bg-center bg-no-repeat bg-cover">
+    <div className="relative bg-[#000000] text-white bg-center bg-no-repeat bg-cover">
       {/* Background Images */}
       <div className="absolute inset-0 w-full">
         {/* Desktop Image */}
@@ -12,7 +12,6 @@ const Hero: React.FC = () => {
           src={ImgDesktop}
           alt="Hero Background Desktop"
           className="hidden sm:block w-full h-screen object-cover"
-         
         />
         {/* Mobile Image with reduced height */}
         <img
@@ -25,9 +24,31 @@ const Hero: React.FC = () => {
       {/* Content Wrapper */}
       <div className="container mx-auto px-4 flex flex-col items-center justify-center h-[70vh] sm:h-screen relative z-10">
         <div className="flex flex-col items-center justify-center w-full h-full">
-          <p className="text-xl sm:text-3xl lg:text-4xl mb-4 sm:mb-8 font-bold tracking-wide text-center px-4" style={{ marginTop:'480px'}}>
+          {/* Desktop Text (single line) */}
+          <p 
+            className="hidden sm:block text-3xl lg:text-4xl mb-8 font-bold tracking-wide text-center px-4 mt-[600px]" 
+            style={{ fontFamily: "'Brygada 1918', serif" }}
+          >
             Your VIP Access to Celebrity Style
           </p>
+          
+          {/* Mobile Text (multi-line) */}
+          <div className="block sm:hidden text-center mt-[300px]">
+          <p 
+  className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-wide"
+  style={{ fontFamily: "'Brygada 1918', serif" }}
+>
+  Your VIP Access to
+</p>
+<p 
+  className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-wide mb-4"
+  style={{ fontFamily: "'Brygada 1918', serif" }}
+>
+  Celebrity Style
+</p>
+
+          </div>
+          
           <button className="bg-[#c9924e] hover:bg-[#B38F2D] text-black px-6 py-2 sm:px-10 sm:py-3 rounded-full font-medium transition-all duration-300 mb-4 sm:mb-0">
             See More Outfits
           </button>

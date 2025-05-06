@@ -44,11 +44,7 @@ const AboutPage: React.FC = () => {
         {/* Hero Section */}
         <div className="relative h-[400px] bg-black text-white flex items-center justify-center">
           <div className="absolute inset-0">
-            <img 
-              src="https://images.pexels.com/photos/994523/pexels-photo-994523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-              alt="Fashion Background" 
-              className="w-full h-full object-cover opacity-50"
-            />
+          
           </div>
           <div className="relative text-center z-10 px-4">
             <h1 className="text-5xl font-serif mb-4">Where Fashion Meets Accessibility</h1>

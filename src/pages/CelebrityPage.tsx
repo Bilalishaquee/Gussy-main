@@ -104,7 +104,7 @@ const CelebrityPage: React.FC = () => {
       </div>
       
       <div className="text-center mt-6">
-        <button className="bg-yellow-400 text-black px-4 py-2 rounded-md">
+        <button className="bg-[#ce9a58] text-black px-4 py-2 rounded-md">
           See More Outfits
         </button>
       </div>
