@@ -87,9 +87,15 @@ const Fashion: React.FC = () => {
         <div className="text-center z-10">
           <h1 className="text-4xl md:text-6xl font-serif mb-4">Trending This Week</h1>
           <p className="text-base md:text-lg mb-6">Discover the latest styles from your favorite shows and celebrities.</p>
-          <button className="bg-[#D4AF37] text-black px-6 py-2 md:px-8 md:py-3 rounded-full font-medium hover:bg-[#B38F2D] transition-all">
-            Explore Now
-          </button>
+          <button
+  className="text-black px-6 py-2 sm:px-10 sm:py-3 rounded-full font-medium transition-all duration-300 mb-4 sm:mb-0"
+  style={{
+    background: 'linear-gradient(to right, #b87d2e, #f1d3a0, #b87d2e)',
+  }}
+>
+  Explore Now
+</button>
+
         </div>
       </div>
 

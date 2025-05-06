@@ -49,9 +49,15 @@ const Hero: React.FC = () => {
 
           </div>
           
-          <button className="bg-[#c9924e] hover:bg-[#B38F2D] text-black px-6 py-2 sm:px-10 sm:py-3 rounded-full font-medium transition-all duration-300 mb-4 sm:mb-0">
-            See More Outfits
-          </button>
+          <button
+  className="text-black px-6 py-2 sm:px-10 sm:py-3 rounded-full font-medium transition-all duration-300 mb-4 sm:mb-0"
+  style={{
+    background: 'linear-gradient(to right, #b87d2e, #f1d3a0, #b87d2e)',
+  }}
+>
+  See More Outfits
+</button>
+
         </div>
       </div>
     </div>

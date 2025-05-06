@@ -142,14 +142,16 @@ const ContactSection: React.FC = () => {
             </div>
 
             <button
-              type="submit"
-              disabled={status === 'loading'}
-              className={`w-full py-3 px-6 rounded font-medium flex items-center justify-center transition-all ${
-                status === 'loading'
-                  ? 'bg-amber-600 cursor-wait'
-                  : 'bg-amber-500 hover:bg-amber-600 active:bg-amber-700'
-              }`}
-            >
+  type="submit"
+  disabled={status === 'loading'}
+  className={`w-full py-3 px-6 rounded font-medium flex items-center justify-center transition-all
+    ${
+      status === 'loading'
+        ? 'bg-amber-600 cursor-wait'
+        : 'bg-gradient-to-r from-[#b87d2e] via-[#f1d3a0] to-[#b87d2e] hover:from-amber-600 hover:via-yellow-500 hover:to-amber-600'
+    }`}
+>
+
               {status === 'loading' ? (
                 <span className="flex items-center">
                   <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
