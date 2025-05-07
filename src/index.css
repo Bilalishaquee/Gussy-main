@@ -16,6 +16,11 @@
   }
 }
 
+/* Add this to your global CSS */
+header {
+  will-change: background-color, color;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
 @layer components {
   /* Floating animation */
   .floating-dress {

@@ -1,8 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Search } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
-import mainLogo from '/src/Assets/gussy.png'; // Main logo
-import secondaryLogo from '../Assets/logo.png'; // Logo for celebrity/shows/product pages
+import { Link } from 'react-router-dom';
+import mainLogo from '/src/Assets/gussy.png';
+import secondaryLogo from '/src/Assets/logo.png';
+
+// Preload logos (removed unused variable)
 
 interface HeaderProps {
   variant?: 'light' | 'dark';
@@ -10,27 +12,30 @@ interface HeaderProps {
   useSecondaryLogo?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ 
+const Header: React.FC<HeaderProps> = React.memo(({ 
   variant = 'dark', 
   hideLogo = false,
   useSecondaryLogo = false 
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  const location = useLocation();
 
-  // Determine colors based on variant
-  const textColor = variant === 'light' ? 'text-black' : 'text-white';
-  const bgColor = variant === 'light' ? 'bg-white' : 'bg-[#000000] bg-opacity-90';
-  const borderColor = variant === 'light' ? 'border-gray-200' : 'border-gray-700';
-  const searchIconColor = variant === 'light' ? 'text-gray-500' : 'text-gray-400';
-  const hoverColor = variant === 'light' ? 'hover:text-gray-600' : 'hover:text-gray-300';
+  // Memoize all computed styles
+  const { textColor, bgColor, borderColor, searchIconColor, hoverColor } = useMemo(() => ({
+    textColor: variant === 'light' ? 'text-black' : 'text-white',
+    bgColor: variant === 'light' ? 'bg-white' : 'bg-black bg-opacity-90',
+    borderColor: variant === 'light' ? 'border-gray-200' : 'border-gray-700',
+    searchIconColor: variant === 'light' ? 'text-gray-500' : 'text-gray-400',
+    hoverColor: variant === 'light' ? 'hover:text-gray-600' : 'hover:text-gray-300'
+  }), [variant]);
 
-  // Close menu when navigating
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location.pathname]);
+  // Memoize logo properties
+  const logoProps = useMemo(() => ({
+    src: useSecondaryLogo ? secondaryLogo : mainLogo,
+    height: useSecondaryLogo ? '50px' : '70px'
+  }), [useSecondaryLogo]);
 
+  // Optimized click outside handler
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (isMenuOpen && menuRef.current && !menuRef.current.contains(event.target as Node)) {
@@ -42,97 +47,109 @@ const Header: React.FC<HeaderProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isMenuOpen]);
 
-  // Determine which logo to use
-  const logo = useSecondaryLogo ? secondaryLogo : mainLogo;
-  const logoHeight = useSecondaryLogo ? '50px' : '70px';
-
   return (
     <header className={`sticky top-0 z-50 ${bgColor} ${textColor} py-4 ${variant === 'light' ? 'border-b' : ''}`}>
       <div className="relative container mx-auto px-4 flex justify-between items-center">
-        {/* Left: Mobile menu button */}
+        {/* Mobile menu button */}
         <button 
           className="md:hidden z-10" 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
         >
           <div className="space-y-1.5">
-            <span className={`block w-6 h-0.5 ${variant === 'light' ? 'bg-black' : 'bg-white'}`}></span>
-            <span className={`block w-6 h-0.5 ${variant === 'light' ? 'bg-black' : 'bg-white'}`}></span>
-            <span className={`block w-6 h-0.5 ${variant === 'light' ? 'bg-black' : 'bg-white'}`}></span>
+            <span className={`block w-6 h-0.5 ${textColor.replace('text-', 'bg-')}`}></span>
+            <span className={`block w-6 h-0.5 ${textColor.replace('text-', 'bg-')}`}></span>
+            <span className={`block w-6 h-0.5 ${textColor.replace('text-', 'bg-')}`}></span>
           </div>
         </button>
 
-        {/* Center: Logo (conditionally rendered) */}
+        {/* Logo */}
         {!hideLogo && (
           <div className="absolute left-1/2 transform -translate-x-1/2">
             <Link to="/" className="flex-shrink-0">
               <img 
-                src={logo}
+                src={logoProps.src}
                 alt="Logo" 
-                style={{ height: logoHeight }} 
+                style={{ height: logoProps.height }} 
                 className="w-auto"
+                loading="eager" // Force eager loading
               />
             </Link>
           </div>
         )}
 
-        {/* Desktop navigation */}
+        {/* Desktop navigation - using React.memo for links */}
         <nav className="hidden md:flex space-x-8">
-          <Link to="/shows" className={`${hoverColor} transition-colors`}>Shows</Link>
-          <Link to="/celebrity" className={`${hoverColor} transition-colors`}>Celebrities</Link>
-          <Link to="/fashion" className={`${hoverColor} transition-colors`}>Shop All</Link>
-          {/* <Link to="/about" className={`${hoverColor} transition-colors`}>About US</Link>
-          <Link to="/get-in-touch" className={`${hoverColor} transition-colors`}>Contact US</Link>
-          <Link to="/terms" className={`${hoverColor} transition-colors`}>Terms</Link>
-          <Link to="/product" className={`${hoverColor} transition-colors`}>Products</Link> */}
+          <MemoizedNavLink to="/shows" className={hoverColor}>Shows</MemoizedNavLink>
+          <MemoizedNavLink to="/celebrity" className={hoverColor}>Celebrities</MemoizedNavLink>
+          <MemoizedNavLink to="/fashion" className={hoverColor}>Shop All</MemoizedNavLink>
+          <MemoizedNavLink to="/about" className={hoverColor}>About US</MemoizedNavLink>
         </nav>
 
-        {/* Right: Search bar (desktop) */}
+        {/* Search bar */}
         <div className="relative hidden md:block">
           <input 
             type="text" 
             placeholder="Search..." 
-            className={`bg-transparent border ${borderColor} rounded-full py-1 px-4 pl-10 w-64 focus:outline-none ${
-              variant === 'light' ? 'focus:border-black text-black' : 'focus:border-white text-white'
-            }`}
+            className={`bg-transparent border ${borderColor} rounded-full py-1 px-4 pl-10 w-64 focus:outline-none ${textColor}`}
           />
           <Search className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 ${searchIconColor}`} />
-        </div>
-
-        {/* Right: Search icon (mobile) */}
-        <div className="md:hidden z-10">
-          <Search className={`w-5 h-5 ${variant === 'light' ? 'text-black' : 'text-white'}`} />
         </div>
       </div>
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div 
+        <MobileMenu 
           ref={menuRef} 
-          className={`md:hidden ${bgColor} py-4 px-6 ${variant === 'light' ? 'border-t border-gray-200' : ''}`}
-        >
-          <nav className="flex flex-col space-y-4">
-            <Link to="/shows" className={`${hoverColor} transition-colors`}>Shows</Link>
-            <Link to="/celebrity" className={`${hoverColor} transition-colors`}>Celebrities</Link>
-            <Link to="/fashion" className={`${hoverColor} transition-colors`}>Shop All</Link>
-            {/* <Link to="/about" className={`${hoverColor} transition-colors`}>About US</Link>
-            <Link to="/get-in-touch" className={`${hoverColor} transition-colors`}>Contact US</Link>
-            <Link to="/terms" className={`${hoverColor} transition-colors`}>Terms</Link>
-            <Link to="/product" className={`${hoverColor} transition-colors`}>Products</Link> */}
-          </nav>
-          <div className="mt-4 relative">
-            <input 
-              type="text" 
-              placeholder="Search..." 
-              className={`bg-transparent border ${borderColor} rounded-full py-2 px-4 pl-10 w-full focus:outline-none ${
-                variant === 'light' ? 'focus:border-black text-black' : 'focus:border-white text-white'
-              }`}
-            />
-            <Search className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 ${searchIconColor}`} />
-          </div>
-        </div>
+          bgColor={bgColor} 
+          textColor={textColor} 
+          borderColor={borderColor}
+          searchIconColor={searchIconColor}
+          hoverColor={hoverColor}
+        />
       )}
     </header>
   );
-};
+});
+
+// Optimized mobile menu component
+const MobileMenu = React.forwardRef<HTMLDivElement, {
+  bgColor: string;
+  textColor: string;
+  borderColor: string;
+  searchIconColor: string;
+  hoverColor: string;
+}>((props, ref) => (
+  <div 
+    ref={ref} 
+    className={`md:hidden ${props.bgColor} py-4 px-6 ${props.textColor}`}
+  >
+    <nav className="flex flex-col space-y-4">
+      <MemoizedNavLink to="/shows" className={props.hoverColor}>Shows</MemoizedNavLink>
+      <MemoizedNavLink to="/celebrity" className={props.hoverColor}>Celebrities</MemoizedNavLink>
+      <MemoizedNavLink to="/fashion" className={props.hoverColor}>Shop All</MemoizedNavLink>
+      <MemoizedNavLink to="/about" className={props.hoverColor}>About US</MemoizedNavLink>
+    </nav>
+    <div className="mt-4 relative">
+      <input 
+        type="text" 
+        placeholder="Search..." 
+        className={`bg-transparent border ${props.borderColor} rounded-full py-2 px-4 pl-10 w-full focus:outline-none ${props.textColor}`}
+      />
+      <Search className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 ${props.searchIconColor}`} />
+    </div>
+  </div>
+));
+
+// Optimized NavLink component
+const MemoizedNavLink = React.memo(({ to, className, children }: {
+  to: string;
+  className: string;
+  children: React.ReactNode;
+}) => (
+  <Link to={to} className={`${className} transition-colors`}>
+    {children}
+  </Link>
+));
 
 export default Header;

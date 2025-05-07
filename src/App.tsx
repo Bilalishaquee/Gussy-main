@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route ,useLocation  } from 'react-router-dom';
-
+import { useMemo } from 'react';
 // Shared Components
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -31,20 +31,22 @@ import { rhoa } from './data/rhoa';
 function App() {
 
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
 
-  const lightHeaderPages = ['/celebrity', '/shows', '/product'];
+  const headerProps = useMemo(() => {
+    const isHomePage = location.pathname === '/';
+    const lightHeaderPages = new Set(['/celebrity', '/shows', '/product']);
+    const shouldHaveLightHeader = lightHeaderPages.has(location.pathname);
+    const shouldUseSecondaryLogo = lightHeaderPages.has(location.pathname);
 
-  const shouldHaveLightHeader = lightHeaderPages.includes(location.pathname);
-  const shouldUseSecondaryLogo = lightHeaderPages.includes(location.pathname);
-
+    return {
+      variant: shouldHaveLightHeader ? ('light' as 'light' | 'dark') : ('dark' as 'light' | 'dark'),
+      hideLogo: isHomePage,
+      useSecondaryLogo: shouldUseSecondaryLogo
+    };
+  }, [location.pathname]);
   return (
     <div className="min-h-screen bg-white">
-      <Header 
-        variant={shouldHaveLightHeader ? 'light' : 'dark'} 
-        hideLogo={isHomePage}
-        useSecondaryLogo={shouldUseSecondaryLogo}
-      />
+     <Header {...headerProps} />
       <Routes>
         <Route
           path="/"
