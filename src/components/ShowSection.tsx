@@ -45,9 +45,9 @@ export default function LoveIslandCarousel({
   };
 
   return (
-    <section className="py-12">
+    <section className="py-16 px-4 font-[Afacad] font-bold">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-serif font-bold text-center mb-8">{title}</h2>
+        <h2 className="text-3xl font-brygada font-bold text-center mb-8">{title}</h2>
         
         <div className="relative">
           {/* Mobile Slider */}
@@ -65,7 +65,7 @@ export default function LoveIslandCarousel({
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h3 className="font-bold text-sm">{item.name}</h3>
+                  <h3 className="font-afacad font-semibold text-base">{item.name}</h3>
                   <p className="font-bold text-sm text-gray-600">{item.look || item.outfit}</p>
                 </div>
               ))}

@@ -6,26 +6,26 @@ import rhobh4 from '../Assets/HOMEPAGE/31.png';
 export const rhobhReunion = [
   {
     id: 1,
-    name: "Kyle Richards",
-    look: "Season 14 Reunion Look",
+    name: "Kyle Richards Season 14 Reunion Look",
+    look: " ",
     image: rhobh1
   },
   {
     id: 2,
-    name: "Dorit Kemsley",
-    look: "Season 14 Reunion Look",
+    name: "Dorit Kemsley Season 14 Reunion Look",
+    look: " ",
     image: rhobh2
   },
   {
     id: 3,
-    name: "Garcelle Beauvais",
-    look: "Season 14 Reunion Look",
+    name: "Garcelle Beauvais Season 14 Reunion Look",
+    look: " ",
     image: rhobh3
   },
   {
     id: 4,
-    name: "Erika Girardi",
-    look: "Season 14 Reunion Look",
+    name: "Erika Girardi Season 14 Reunion Look",
+    look: " ",
     image: rhobh4
   }
 ];

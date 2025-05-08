@@ -48,18 +48,28 @@ const TrendingCelebs: React.FC = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 text-white">
-                  <h3 className="text-lg font-medium mb-1">{item.outfitName}</h3>
-                  <p className="text-sm text-gray-300 mb-4">on {item.show}</p>
-                  <Button 
-                    size="sm" 
-                    className="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300"
-                  >
-                    Find This Now
-                  </Button>
+            
+                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent p-4 text-white rounded-lg">
+  <div>
+    <p className="text-xl font-normal leading-snug">
+      {item.outfitName}
+    </p>
+    <p className="text-xl font-normal leading-snug">
+      on {item.show}
+    </p>
+  </div>
+
+
+                  
+                  <button className="inline-flex items-center justify-center px-4 py-1.5 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-200 w-fit mt-3">
+                    Shop Now
+                    <ChevronRight className="w-4 h-4 ml-1" />
+                  </button>
                 </div>
               </div>
             )}
+            
+            
             visibleSlides={visibleSlides}
           />
           

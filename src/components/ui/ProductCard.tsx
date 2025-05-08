@@ -22,8 +22,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
           className="w-full h-80 object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
         />
       </div>
-      <h3 className="font-medium text-sm mb-1">{celebrity}'s {title}</h3>
-      <p className="text-xs text-gray-500">{source}</p>
+      <h3 className="font-bold text-sm mb-1">{celebrity}'s {title}</h3>
+      <p className="text-xs font-bold italic underline text-gray-700">{source}</p>
     </div>
   );
 };

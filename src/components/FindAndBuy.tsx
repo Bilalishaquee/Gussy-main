@@ -5,9 +5,12 @@ import { products } from '../data/products';
 
 const FindAndBuy: React.FC = () => {
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4 font-[Afacad] font-bold">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-5xl font-serif font-bold text-center mb-12">Find and Buy Now</h2>
+      <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 font-brygada">
+  Find and Buy Now
+</h2>
+
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {products.map((product) => (

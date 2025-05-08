@@ -9,7 +9,7 @@ const MoreLatest: React.FC = () => {
   const desktopItems = latestOutfits;
 
   return (
-    <section className="py-16">
+    <section className="py-16 px-4 font-[Afacad] font-bold">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-serif text-center mb-12">More of the Latest</h2>
         
@@ -23,9 +23,9 @@ const MoreLatest: React.FC = () => {
                   alt={`${outfit.celebrity}'s ${outfit.title}`}
                   className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
                 />
-              </div>
-              <h3 className="font-medium text-sm mb-1 line-clamp-2">{outfit.celebrity}'s {outfit.title}</h3>
-              <p className="text-xs text-gray-500 line-clamp-1">{outfit.source}</p>
+               </div>
+              <h3 className="font-bold text-sm mb-1">{outfit.celebrity}'s {outfit.title}</h3>
+              <p className="text-xs font-bold italic underline text-gray-700">{outfit.source}</p>
             </div>
           ))}
         </div>
@@ -41,9 +41,10 @@ const MoreLatest: React.FC = () => {
                   className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <h3 className="font-medium text-sm mb-1">{outfit.celebrity}'s {outfit.title}</h3>
-              <p className="text-xs text-gray-500">{outfit.source}</p>
+              <h3 className="font-bold text-sm mb-1">{outfit.celebrity}'s {outfit.title}</h3>
+              <p className="text-xs font-bold italic underline text-gray-700">{outfit.source}</p>
             </div>
+            
           ))}
         </div>
         

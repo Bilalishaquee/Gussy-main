@@ -6,26 +6,26 @@ import summer4 from '../Assets/HOMEPAGE/35.png';
 export const summerHouse = [
   {
     id: 1,
-    name: "Ciara Miller",
-    outfit: "Yellow Strapless Corset Dress",
+    name: "Ciara Miller Yellow Strapless Corset Dress",
+    outfit: " ",
     image: summer1
   },
   {
     id: 2,
-    name: "Paige DeSorbo",
-    outfit: "White Bubble Mini Dress",
+    name: "Paige DeSorbo White Bubble Mini Dress",
+    outfit: " ",
     image: summer2
   },
   {
     id: 3,
-    name: "Paige DeSorbo",
-    outfit: "Blue Polka Dot Dress",
+    name: "Paige DeSorbo Blue Polka Dot Dress",
+    outfit: " ",
     image: summer3
   },
   {
     id: 4,
-    name: "Ciara Miller",
-    outfit: "Graphic Trucker Hat",
+    name: "Ciara Miller Graphic Trucker Hat",
+    outfit: " ",
     image: summer4
   }
 ];

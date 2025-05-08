@@ -1,10 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  
   theme: {
     extend: {
       fontFamily: {
+        brygada: ['"Brygada 1918"', 'serif'],
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        gussy: ['"Cormorant Garamond"', 'serif'],
         serif: ['Playfair Display', 'ui-serif', 'Georgia', 'serif'],
       },
       colors: {
@@ -22,6 +25,7 @@ export default {
           950: '#451a03',
         }
       },
+      
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-in-out',

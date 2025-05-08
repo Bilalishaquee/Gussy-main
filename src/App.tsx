@@ -32,6 +32,7 @@ function App() {
 
   const location = useLocation();
 
+
   const headerProps = useMemo(() => {
     const isHomePage = location.pathname === '/';
     const lightHeaderPages = new Set(['/celebrity', '/shows', '/product']);
