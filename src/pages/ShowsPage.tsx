@@ -35,42 +35,42 @@ const ShowsPage: React.FC = () => {
           id: 1,
           title: 'Kyle Richards',
           image: showImage2,
-          network: ' ',
+          
           name: 'Kyle Richards'
         },
         {
           id: 2,
           title: 'Dorit Kemsley',
           image: showImage3,
-          network: ' ',
+        
           name: 'Dorit Kemsley'
         },
         {
           id: 3,
           title: 'Sutton Stracke',
           image: showImage4,
-          network: ' ',
+          
           name: 'Sutton Stracke'
         },
         {
           id: 4,
           title: 'Kathy Hilton',
           image: showImage5,
-          network: ' ',
+        
           name: 'Kathy Hilton'
         },
         {
           id: 5,
           title: 'Erika Jayne',
           image: showImage6,
-          network: ' ',
+         
           name: 'Erika Jayne'
         },
         {
           id: 6,
           title: 'Crystal Kung Minkoff',
           image: showImage7,
-          network: ' ',
+        
           name: 'Crystal Kung Minkoff'
         },
       ];
@@ -167,7 +167,7 @@ const ShowsPage: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <div className="md:col-span-1">
           <CelebrityProfile
-            name="Angie Katsanevas"
+            name="Real Housewives of BeverlyHills Fashion"
             image={profileImage}
             show="The Real Housewives of Salt Lake City"
             location="Salt Lake City"

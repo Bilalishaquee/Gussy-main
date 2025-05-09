@@ -80,8 +80,9 @@ const Header: React.FC<HeaderProps> = React.memo(({
 
         {/* Desktop navigation - using React.memo for links */}
         <nav className="hidden md:flex space-x-8">
-          <MemoizedNavLink to="/shows" className={hoverColor}>Shows</MemoizedNavLink>
-          <MemoizedNavLink to="/celebrity" className={hoverColor}>Celebrities</MemoizedNavLink>
+ 
+          <MemoizedNavLink to="/ShowsFindr" className={hoverColor}>Shows</MemoizedNavLink>
+          <MemoizedNavLink to="/celeb" className={hoverColor}>Celebrities</MemoizedNavLink>
           <MemoizedNavLink to="/fashion" className={hoverColor}>Shop All</MemoizedNavLink>
           <MemoizedNavLink to="/about" className={hoverColor}>About US</MemoizedNavLink>
         </nav>
@@ -125,8 +126,8 @@ const MobileMenu = React.forwardRef<HTMLDivElement, {
     className={`md:hidden ${props.bgColor} py-4 px-6 ${props.textColor}`}
   >
     <nav className="flex flex-col space-y-4">
-      <MemoizedNavLink to="/shows" className={props.hoverColor}>Shows</MemoizedNavLink>
-      <MemoizedNavLink to="/celebrity" className={props.hoverColor}>Celebrities</MemoizedNavLink>
+      <MemoizedNavLink to="/ShowsFindr" className={props.hoverColor}>Shows</MemoizedNavLink>
+      <MemoizedNavLink to="/celeb" className={props.hoverColor}>Celebrities</MemoizedNavLink>
       <MemoizedNavLink to="/fashion" className={props.hoverColor}>Shop All</MemoizedNavLink>
       <MemoizedNavLink to="/about" className={props.hoverColor}>About US</MemoizedNavLink>
     </nav>

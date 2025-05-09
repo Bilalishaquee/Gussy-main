@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Search } from 'lucide-react';
+
+import { useNavigate } from 'react-router-dom';
 import product1 from '../Assets/featured/1.png';
 import product2 from '../Assets/featured/2.png';
 import product3 from '../Assets/featured/9.png';
@@ -107,6 +109,7 @@ const networks = [
 
 // Show Card Component for Featured Shows (Desktop)
 const FeaturedShowCard: React.FC<{ show: Show }> = ({ show }) => {
+     const navigate = useNavigate();
   const getBadgeStyle = () => {
     switch (show.networkType) {
       case 'Netflix': return 'bg-red-600';
@@ -118,7 +121,10 @@ const FeaturedShowCard: React.FC<{ show: Show }> = ({ show }) => {
 
   return (
     <div className="relative flex-shrink-0 w-[300px] mx-4 overflow-hidden transition-transform duration-300 transform hover:scale-[1.02] group">
-      <div className="relative h-[450px] w-full overflow-hidden rounded-xl shadow-xl">
+         <div 
+        className="relative h-[450px] w-full overflow-hidden rounded-xl shadow-xl cursor-pointer"
+        onClick={() => navigate('/shows')}
+      >
         <img 
           src={show.featuredImage} 
           alt={show.title} 
@@ -383,6 +389,7 @@ const ShowsListing: React.FC<{ shows: Show[] }> = ({ shows }) => {
 
 // Mobile Featured Shows Component
 const MobileFeaturedShows: React.FC<{ shows: Show[] }> = ({ shows }) => {
+    const navigate = useNavigate();
   return (
     <div className="block sm:hidden w-full py-8 px-6 bg-gray-50">
       <h2 className="text-3xl font-bold text-center mb-8 font-brygada">Featured Shows</h2>
@@ -394,6 +401,7 @@ const MobileFeaturedShows: React.FC<{ shows: Show[] }> = ({ shows }) => {
               src={show.featuredImage}
               alt={show.title}
               className="w-full h-[400px] object-cover"
+              onClick={() => navigate('/shows')}
             />
             <div className="px-5 py-6">
               <div className="flex items-center justify-between">

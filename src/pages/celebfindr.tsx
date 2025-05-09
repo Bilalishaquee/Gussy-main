@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Search } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import RealHousewives from '../components/RealHousewives';
 import img20 from '../Assets/HOMEPAGE/20.png';
 import img21 from '../Assets/HOMEPAGE/21.png';
@@ -115,6 +116,12 @@ const networks = [
 
 // Featured Celebrity Card Component
 const FeaturedCelebrityCard: React.FC<{ celebrity: Celebrity }> = ({ celebrity }) => {
+    const navigate = useNavigate();
+
+      const handleClick = () => {
+    navigate('/celebrity');
+    window.scrollTo(0, 0); // Scroll to top after navigation
+  };
   const getBadgeStyle = () => {
     if (!celebrity.networkType) return '';
     switch (celebrity.networkType) {
@@ -127,7 +134,10 @@ const FeaturedCelebrityCard: React.FC<{ celebrity: Celebrity }> = ({ celebrity }
 
  return (
     <div className="relative flex-shrink-0 w-[300px] mx-4 overflow-hidden transition-transform duration-300 transform hover:scale-[1.02] group">
-      <div className="relative h-[450px] w-full overflow-hidden rounded-xl shadow-xl">
+       <div 
+        className="relative h-[450px] w-full overflow-hidden rounded-xl shadow-xl cursor-pointer"
+        onClick={handleClick}
+      >
         <img 
           src={celebrity.featuredImage} 
           alt={celebrity.featuredTitle} 
@@ -191,7 +201,7 @@ const containerRef = useRef<HTMLDivElement>(null);
   return (
     <div className="w-full py-12 bg-gray-50">
       <div className="container px-8 mx-auto">
-        <h1 className="mb-10 text-4xl font-bold text-center font-brygada">Featured Shows</h1>
+        <h1 className="mb-10 text-4xl font-bold text-center font-brygada">Featured Celebrities</h1>
 
         <div className="relative">
           {/* Left Arrow - Only show if not at start */}
@@ -277,7 +287,7 @@ const CelebritiesListing: React.FC<{ celebrities: Celebrity[] }> = ({ celebritie
 
   return (
     <div className="container px-4 py-10 mx-auto">
-      <h1 className="mb-6 sm:mb-8 text-3xl font-bold text-center font-brygada">Celebrity Directory</h1>
+      <h1 className="mb-6 sm:mb-8 text-3xl font-bold text-center font-brygada">Find Celebrities</h1>
 
       {/* Search Bar */}
       <div className="flex justify-center mb-8">
@@ -369,9 +379,10 @@ const CelebritiesListing: React.FC<{ celebrities: Celebrity[] }> = ({ celebritie
 
 // Mobile Featured Celebrities Component
 const MobileFeaturedCelebrities: React.FC<{ celebrities: Celebrity[] }> = ({ celebrities }) => {
+      const navigate = useNavigate();
   return (
     <div className="block sm:hidden w-full py-6 px-4">
-      <h2 className="text-2xl font-bold text-center mb-6 font-brygada">Featured Stars</h2>
+      <h2 className="text-2xl font-bold text-center mb-6 font-brygada">Featured Celebrities</h2>
 
       <div className="space-y-6">
         {celebrities.slice(0, 4).map((celebrity) => (
@@ -383,6 +394,7 @@ const MobileFeaturedCelebrities: React.FC<{ celebrities: Celebrity[] }> = ({ cel
               src={celebrity.featuredImage}
               alt={celebrity.featuredTitle}
               className="w-full h-[330px] object-cover rounded-t-md"
+               onClick={() => navigate('/celebrity')}
             />
             <div className="px-4 py-4 font-afacad">
               <div className="flex items-center justify-between">
@@ -399,7 +411,9 @@ const MobileFeaturedCelebrities: React.FC<{ celebrities: Celebrity[] }> = ({ cel
       </div>
 
       <div className="flex justify-center mt-6">
-        <button className="bg-gradient-to-r from-[#C8933C] to-[#D4A658] text-black px-10 py-2 rounded-full text-[15px] font-afacad shadow-md hover:scale-105 transition-all">
+        <button className="bg-gradient-to-r from-[#C8933C] to-[#D4A658] text-white px-12 py-3 rounded-full text-lg font-medium shadow-lg hover:scale-105 transition-all"
+          onClick={() => navigate('/celebrity')}
+        >
           View More
         </button>
       </div>

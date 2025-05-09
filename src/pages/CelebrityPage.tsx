@@ -27,37 +27,37 @@ const CelebrityPage: React.FC = () => {
       id: 1,
       title: '',
       image: showImage1,
-      network: ' ',
+    
     },
     {
       id: 2,
       title: '',
       image: showImage2,
-      network: ' ',
+      
     },
     {
       id: 3,
       title: '',
       image: showImage3,
-      network: ' ',
+      
     },
     {
       id: 4,
       title: '',
       image: showImage1,
-      network: ' ',
+   
     },
     {
       id: 5,
       title: '',
       image: showImage2,
-      network: ' ',
+      
     },
     {
       id: 6,
       title: '',
       image: showImage3,
-      network: ' ',
+    
     },
   ];
 

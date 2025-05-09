@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route ,useLocation  } from 'react-router-dom';
 import { useMemo } from 'react';
 // Shared Components
+import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import FindAndBuy from './components/FindAndBuy';
@@ -49,8 +50,11 @@ function App() {
   }, [location.pathname]);
   return (
     <div className="min-h-screen bg-white">
+      
      <Header {...headerProps} />
+<ScrollToTop />
       <Routes>
+        
         <Route
           path="/"
           element={
@@ -69,6 +73,7 @@ function App() {
             </main>
           }
         />
+        
         <Route path="/fashion" element={<Fashion />} />
         <Route path="/celebrity" element={<Celbrity />} />
         <Route path="/shows" element={<Shows />} />
