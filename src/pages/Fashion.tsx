@@ -13,7 +13,6 @@ import product10 from '../Assets/HOMEPAGE/10.png';
 import product11 from '../Assets/HOMEPAGE/11.png';
 import product12 from '../Assets/HOMEPAGE/12.png';
 
-
 // Data arrays
 const shows = [
   { category: 'A', items: ['Access Hollywood Live', 'American Idol Fashion', 'American Woman', 'Award Shows'] },
@@ -41,19 +40,139 @@ const celebrities = [
 const brands = ['All Brands', 'Gucci', 'Prada', 'Versace', 'Dolce & Gabbana'];
 const productsList = ['All Products', 'Dresses', 'Accessories', 'Tops', 'Bottoms'];
 
-const products = [
-  { image: product1, name: "Gina Richardson's Black Floral Long Sleeve Midi Dress", source: "Real Housewives of Orange County" },
-  { image: product2, name: "Lena Borgeous's Tan And White Printed Boho Dress", source: "Southern Charm Instagram Fashion" },
-  { image: product3, name: "Brynn Whitfield's White Satin Lace Slip Dress", source: "Real Housewives of New York Instagram" },
-  { image: product4, name: "Melissa Gorga's Yellow Rose Tweed Mini Dress", source: "Real Housewives of New Jersey Instagram" },
-  { image: product5, name: "Lexi Wood's Cropped Blazer And Skirt", source: "Summer House Fashion" },
-  { image: product6, name: "Gabby Prescod's Black Aviator Sunglasses", source: "Summer House Fashion" },
-  { image: product7, name: "Madison LeCroy's Yellow Off The Shoulder Dress", source: "Watch What Happens Live Fashion" },
-  { image: product8, name: "Lexi Wood's Yellow Satin Backless Dress", source: "Summer House Fashion" },
-  { image: product9, name: "Amanda Batula's Black Belted Pantsuit", source: "Summer House Fashion" },
-  { image: product10, name: "Leva Bonaparte's White Cable Knit Varsity Sweater", source: "Southern Charm Instagram Fashion" },
-  { image: product11, name: "Angela Oakley's Black Draped Midi Dress", source: "Real Housewives of Atlanta Fashion" },
-  { image: product12, name: "Paige DeSorbo's Black Satin Peplum Top", source: "Summer House Fashion" }
+const allProducts = [
+  { 
+    image: product1, 
+    name: "Gina Richardson's Black Floral Long Sleeve Midi Dress", 
+    source: "Real Housewives of Orange County",
+    show: "Real Housewives of Orange County",
+    celebrity: "Gina Richardson",
+    brand: "Gucci",
+    type: "Dresses",
+    isTopPick: true,
+    isLatestDrop: false
+  },
+  { 
+    image: product2, 
+    name: "Lena Borgeous's Tan And White Printed Boho Dress", 
+    source: "Southern Charm Instagram Fashion",
+    show: "Southern Charm",
+    celebrity: "Lena Borgeous",
+    brand: "Prada",
+    type: "Dresses",
+    isTopPick: true,
+    isLatestDrop: true
+  },
+  { 
+    image: product3, 
+    name: "Brynn Whitfield's White Satin Lace Slip Dress", 
+    source: "Real Housewives of New York Instagram",
+    show: "Real Housewives of New York",
+    celebrity: "Brynn Whitfield",
+    brand: "Versace",
+    type: "Dresses",
+    isTopPick: false,
+    isLatestDrop: true
+  },
+  { 
+    image: product4, 
+    name: "Melissa Gorga's Yellow Rose Tweed Mini Dress", 
+    source: "Real Housewives of New Jersey Instagram",
+    show: "Real Housewives of New Jersey",
+    celebrity: "Melissa Gorga",
+    brand: "Dolce & Gabbana",
+    type: "Dresses",
+    isTopPick: true,
+    isLatestDrop: false
+  },
+  { 
+    image: product5, 
+    name: "Lexi Wood's Cropped Blazer And Skirt", 
+    source: "Summer House Fashion",
+    show: "Summer House",
+    celebrity: "Lexi Wood",
+    brand: "Gucci",
+    type: "Bottoms",
+    isTopPick: false,
+    isLatestDrop: true
+  },
+  { 
+    image: product6, 
+    name: "Gabby Prescod's Black Aviator Sunglasses", 
+    source: "Summer House Fashion",
+    show: "Summer House",
+    celebrity: "Gabby Prescod",
+    brand: "Prada",
+    type: "Accessories",
+    isTopPick: true,
+    isLatestDrop: false
+  },
+  { 
+    image: product7, 
+    name: "Madison LeCroy's Yellow Off The Shoulder Dress", 
+    source: "Watch What Happens Live Fashion",
+    show: "Watch What Happens Live",
+    celebrity: "Madison LeCroy",
+    brand: "Versace",
+    type: "Dresses",
+    isTopPick: false,
+    isLatestDrop: true
+  },
+  { 
+    image: product8, 
+    name: "Lexi Wood's Yellow Satin Backless Dress", 
+    source: "Summer House Fashion",
+    show: "Summer House",
+    celebrity: "Lexi Wood",
+    brand: "Dolce & Gabbana",
+    type: "Dresses",
+    isTopPick: true,
+    isLatestDrop: false
+  },
+  { 
+    image: product9, 
+    name: "Amanda Batula's Black Belted Pantsuit", 
+    source: "Summer House Fashion",
+    show: "Summer House",
+    celebrity: "Amanda Batula",
+    brand: "Gucci",
+    type: "Tops",
+    isTopPick: false,
+    isLatestDrop: true
+  },
+  { 
+    image: product10, 
+    name: "Leva Bonaparte's White Cable Knit Varsity Sweater", 
+    source: "Southern Charm Instagram Fashion",
+    show: "Southern Charm",
+    celebrity: "Leva Bonaparte",
+    brand: "Prada",
+    type: "Tops",
+    isTopPick: true,
+    isLatestDrop: false
+  },
+  { 
+    image: product11, 
+    name: "Angela Oakley's Black Draped Midi Dress", 
+    source: "Real Housewives of Atlanta Fashion",
+    show: "Real Housewives of Atlanta",
+    celebrity: "Angela Oakley",
+    brand: "Versace",
+    type: "Dresses",
+    isTopPick: false,
+    isLatestDrop: true
+  },
+  { 
+    image: product12, 
+    name: "Paige DeSorbo's Black Satin Peplum Top", 
+    source: "Summer House Fashion",
+    show: "Summer House",
+    celebrity: "Paige DeSorbo",
+    brand: "Dolce & Gabbana",
+    type: "Tops",
+    isTopPick: true,
+    isLatestDrop: false
+  }
 ];
 
 const Fashion: React.FC = () => {
@@ -66,6 +185,7 @@ const Fashion: React.FC = () => {
     topPicks: false,
     latestDrops: false
   });
+  const [searchTerm, setSearchTerm] = useState('');
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -79,8 +199,50 @@ const Fashion: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Filter products based on selected filters
+  const filteredProducts = allProducts.filter(product => {
+    // Filter by show
+    if (selected.show !== 'All Shows' && !product.show.includes(selected.show)) {
+      return false;
+    }
+    
+    // Filter by celebrity
+    if (selected.celebrity !== 'All Celebrities' && !product.celebrity.includes(selected.celebrity)) {
+      return false;
+    }
+    
+    // Filter by brand
+    if (selected.brand !== 'All Brands' && product.brand !== selected.brand) {
+      return false;
+    }
+    
+    // Filter by product type
+    if (selected.product !== 'All Products' && product.type !== selected.product) {
+      return false;
+    }
+    
+    // Filter by top picks
+    if (selected.topPicks && !product.isTopPick) {
+      return false;
+    }
+    
+    // Filter by latest drops
+    if (selected.latestDrops && !product.isLatestDrop) {
+      return false;
+    }
+    
+    // Filter by search term
+    if (searchTerm && 
+        !product.name.toLowerCase().includes(searchTerm.toLowerCase()) && 
+        !product.source.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        !product.celebrity.toLowerCase().includes(searchTerm.toLowerCase())) {
+      return false;
+    }
+    
+    return true;
+  });
+
   return (
-  
     <div className="min-h-screen bg-black text-white" ref={ref}>
       {/* Hero Section */}
       <div className="relative h-[300px] md:h-[400px] flex items-center justify-center text-white px-4">
@@ -88,14 +250,13 @@ const Fashion: React.FC = () => {
           <h1 className="text-4xl md:text-6xl font-serif mb-4">Trending This Week</h1>
           <p className="text-base md:text-lg mb-6">Discover the latest styles from your favorite shows and celebrities.</p>
           <button
-  className="text-black px-6 py-2 sm:px-10 sm:py-3 rounded-full font-medium transition-all duration-300 mb-4 sm:mb-0"
-  style={{
-    background: 'linear-gradient(to right, #b87d2e, #f1d3a0, #b87d2e)',
-  }}
->
-  Explore Now
-</button>
-
+            className="text-black px-6 py-2 sm:px-10 sm:py-3 rounded-full font-medium transition-all duration-300 mb-4 sm:mb-0"
+            style={{
+              background: 'linear-gradient(to right, #b87d2e, #f1d3a0, #b87d2e)',
+            }}
+          >
+            Explore Now
+          </button>
         </div>
       </div>
 
@@ -112,6 +273,8 @@ const Fashion: React.FC = () => {
                   type="search" 
                   placeholder="Search..." 
                   className="pl-10 pr-4 py-2 border rounded-full w-full md:w-64" 
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
               </div>
@@ -244,6 +407,17 @@ const Fashion: React.FC = () => {
                       </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-h-[400px] overflow-y-auto pr-2 md:pr-4">
+                      <div>
+                        <h4 className="text-lg md:text-xl font-medium mb-2 md:mb-4">All</h4>
+                        <ul className="space-y-2 md:space-y-3 text-sm md:text-base">
+                          <li 
+                            onClick={() => { setSelected(s=>({...s, show: 'All Shows'})); setOpenMenu(null); }} 
+                            className="cursor-pointer hover:underline hover:text-[#D4AF37] transition-colors"
+                          >
+                            All Shows
+                          </li>
+                        </ul>
+                      </div>
                       {shows.map(g => (
                         <div key={g.category}>
                           <h4 className="text-lg md:text-xl font-medium mb-2 md:mb-4">{g.category}</h4>
@@ -278,6 +452,12 @@ const Fashion: React.FC = () => {
                       </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-h-[400px] overflow-y-auto pr-2 md:pr-4">
+                      <div
+                        onClick={() => { setSelected(s=>({...s, celebrity: 'All Celebrities'})); setOpenMenu(null); }} 
+                        className="cursor-pointer hover:underline hover:text-[#D4AF37] transition-colors text-sm md:text-base"
+                      >
+                        All Celebrities
+                      </div>
                       {celebrities.map(n => (
                         <div
                           key={n} 
@@ -358,29 +538,38 @@ const Fashion: React.FC = () => {
               {/* Empty space to align with sidebar */}
             </div>
             <div className="w-full md:w-4/5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {products.map((p,i) => (
-                  <div key={i} className="group cursor-pointer">
-                    <div className="aspect-square overflow-hidden rounded-lg mb-2 md:mb-3">
-                      <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300" />
-                    </div>
-                    <h3 className="text-xs md:text-sm font-medium line-clamp-2">{p.name}</h3>
-                    <p className="text-xs text-gray-500 mt-1 line-clamp-1">{p.source}</p>
+              {filteredProducts.length === 0 ? (
+                <div className="text-center py-12">
+                  <h3 className="text-xl font-medium mb-2">No products found</h3>
+                  <p className="text-gray-500">Try adjusting your filters or search term</p>
+                </div>
+              ) : (
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    {filteredProducts.map((p,i) => (
+                      <div key={i} className="group cursor-pointer">
+                        <div className="aspect-square overflow-hidden rounded-lg mb-2 md:mb-3">
+                          <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300" />
+                        </div>
+                        <h3 className="text-xs md:text-sm font-medium line-clamp-2">{p.name}</h3>
+                        <p className="text-xs text-gray-500 mt-1 line-clamp-1">{p.source}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
 
-              {/* Pagination */}
-              <div className="flex justify-center items-center mt-8 md:mt-12 gap-1 md:gap-2">
-                {[1,2,3,4,5,6].map(page => (
-                  <button 
-                    key={page} 
-                    className={`w-6 h-6 md:w-8 md:h-8 rounded-full ${page===1?'bg-black text-white':'text-gray-500 hover:bg-gray-100'}`}
-                  >
-                    {page}
-                  </button>
-                ))}
-              </div>
+                  {/* Pagination */}
+                  <div className="flex justify-center items-center mt-8 md:mt-12 gap-1 md:gap-2">
+                    {[1,2,3,4,5,6].map(page => (
+                      <button 
+                        key={page} 
+                        className={`w-6 h-6 md:w-8 md:h-8 rounded-full ${page===1?'bg-black text-white':'text-gray-500 hover:bg-gray-100'}`}
+                      >
+                        {page}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -390,4 +579,3 @@ const Fashion: React.FC = () => {
 };
 
 export default Fashion;
-

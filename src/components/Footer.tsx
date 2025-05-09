@@ -125,10 +125,12 @@ const Footer: React.FC = () => {
                 <div>
                   <h4 className="text-sm font-medium mb-4">Shows</h4>
                   <ul className="space-y-2">
-                    <li><Link to="/Celeb" className="text-sm text-gray-400 hover:text-white transition-colors">CelebrityFinder</Link></li>
-                    <li><Link to="/Showsfindr" className="text-sm text-gray-400 hover:text-white transition-colors">ShowsFinder</Link></li>
-                    <li><Link to="/shows" className="text-sm text-gray-400 hover:text-white transition-colors">Shows</Link></li>
-                    <li><Link to="/celebrity" className="text-sm text-gray-400 hover:text-white transition-colors">Celebrities</Link></li>
+                    <li><Link to="/Celeb" className="text-sm text-gray-400 hover:text-white transition-colors">Celebrity Finder</Link></li>
+                    <li><Link to="/Showsfindr" className="text-sm text-gray-400 hover:text-white transition-colors">Shows Finder</Link></li>
+                    <li><Link to="/show" className="text-sm text-gray-400 hover:text-white transition-colors">The Bachelor</Link></li>
+                    <li><Link to="/celebrit" className="text-sm text-gray-400 hover:text-white transition-colors">Selling Sunset</Link></li>
+                    <li><Link to="/celebrit" className="text-sm text-gray-400 hover:text-white transition-colors">Bridgerton </Link></li>
+                     <li><Link to="/celebrit" className="text-sm text-gray-400 hover:text-white transition-colors">The Kardashians </Link></li>
                   </ul>
                 </div>
 
