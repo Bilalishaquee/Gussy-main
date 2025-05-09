@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
   <div>
     <h4 className="text-sm font-medium mb-4">Shows</h4>
     <ul className="space-y-2">
-      {['The Bachelor', 'Selling Sunset', 'Emily in Paris', 'Bridgerton', 'The Kardashians'].map((show) => (
+      {['Showsfinder', 'Celebfinder', 'Emily in Paris', 'Bridgerton', 'The Kardashians'].map((show) => (
         <li key={show}>
           <Link to="/shows" className="text-sm text-gray-400 hover:text-white transition-colors">
             {show}
@@ -125,13 +125,10 @@ const Footer: React.FC = () => {
                 <div>
                   <h4 className="text-sm font-medium mb-4">Shows</h4>
                   <ul className="space-y-2">
-                    {['The Bachelor', 'Selling Sunset', 'Emily in Paris', 'Bridgerton', 'The Kardashians'].map((show) => (
-                      <li key={show}>
-                        <Link to="/shows" className="text-sm text-gray-400 hover:text-white transition-colors">
-                          {show}
-                        </Link>
-                      </li>
-                    ))}
+                    <li><Link to="/Celeb" className="text-sm text-gray-400 hover:text-white transition-colors">CelebrityFinder</Link></li>
+                    <li><Link to="/Showsfindr" className="text-sm text-gray-400 hover:text-white transition-colors">ShowsFinder</Link></li>
+                    <li><Link to="/shows" className="text-sm text-gray-400 hover:text-white transition-colors">Shows</Link></li>
+                    <li><Link to="/celebrity" className="text-sm text-gray-400 hover:text-white transition-colors">Celebrities</Link></li>
                   </ul>
                 </div>
 

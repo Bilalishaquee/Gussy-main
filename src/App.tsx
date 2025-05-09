@@ -16,14 +16,15 @@ import Footer from './components/Footer';
 
 // Pages
 import Fashion from './pages/Fashion';
+import Celeb from'./pages/celeb';
+import Showsfindr from './pages/Showsfind'
 import Celbrity from './pages/CelebrityPage';
 import Shows from './pages/ShowsPage';
 import Terms from './pages/TermsOfservice';
 import Product from './pages/ProductPage';
 import About from './pages/AboutPage';
 import Getin from './pages/Getin';
-import Showsf from './pages/Showsfind';
-import Celeb from './pages/celeb';
+
 // Data
 import { rhobhReunion } from './data/rhobhReunion';
 import { summerHouse } from './data/summerHouse';
@@ -54,7 +55,7 @@ function App() {
           path="/"
           element={
             <main>
-              {/* <Hero />
+              <Hero />
               <FindAndBuy />
               <TopPicks />
               <AsSeenOn />
@@ -65,10 +66,6 @@ function App() {
               <ShowSection title="#SummerHouse S9E5" items={summerHouse} />
               <ShowSection title="#RHOA S16E4" items={rhoa} />
               <More />
-              <Showsf/> */}
-
-            <Showsf/>
-
             </main>
           }
         />
@@ -79,6 +76,8 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/about" element={<About />} />
         <Route path="/get-in-touch" element={<Getin />} />
+        <Route path="/celeb" element={<Celeb />} />
+        <Route path="/ShowsFindr" element={<Showsfindr />} />
         <Route path="*" element={<div className="p-10 text-center text-lg">404 - Page Not Found</div>} />
       </Routes>
       <Footer />
