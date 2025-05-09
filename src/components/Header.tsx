@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = React.memo(({
   // Memoize all computed styles
   const { textColor, bgColor, borderColor, searchIconColor, hoverColor } = useMemo(() => ({
     textColor: variant === 'light' ? 'text-black' : 'text-white',
-    bgColor: variant === 'light' ? 'bg-white' : 'bg-[#000000]',
+    bgColor: variant === 'light' ? 'bg-white' : 'bg-black bg-opacity-90',
     borderColor: variant === 'light' ? 'border-gray-200' : 'border-gray-700',
     searchIconColor: variant === 'light' ? 'text-gray-500' : 'text-gray-400',
     hoverColor: variant === 'light' ? 'hover:text-gray-600' : 'hover:text-gray-300'

@@ -22,7 +22,8 @@ import Terms from './pages/TermsOfservice';
 import Product from './pages/ProductPage';
 import About from './pages/AboutPage';
 import Getin from './pages/Getin';
-
+import Showsf from './pages/Showsfind';
+import Celeb from './pages/celeb';
 // Data
 import { rhobhReunion } from './data/rhobhReunion';
 import { summerHouse } from './data/summerHouse';
@@ -53,7 +54,7 @@ function App() {
           path="/"
           element={
             <main>
-              <Hero />
+              {/* <Hero />
               <FindAndBuy />
               <TopPicks />
               <AsSeenOn />
@@ -64,6 +65,10 @@ function App() {
               <ShowSection title="#SummerHouse S9E5" items={summerHouse} />
               <ShowSection title="#RHOA S16E4" items={rhoa} />
               <More />
+              <Showsf/> */}
+
+            <Showsf/>
+
             </main>
           }
         />

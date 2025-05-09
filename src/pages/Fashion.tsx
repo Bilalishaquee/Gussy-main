@@ -12,7 +12,7 @@ import product9 from '../Assets/HOMEPAGE/9.png';
 import product10 from '../Assets/HOMEPAGE/10.png';
 import product11 from '../Assets/HOMEPAGE/11.png';
 import product12 from '../Assets/HOMEPAGE/12.png';
-import layout from '../components/Layout/Layout';
+
 
 // Data arrays
 const shows = [
