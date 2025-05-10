@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
   <div>
     <h4 className="text-sm font-medium mb-4">Shows</h4>
     <ul className="space-y-2">
-      {['Showsfinder', 'Celebfinder', 'Emily in Paris', 'Bridgerton', 'The Kardashians'].map((show) => (
+      {['The Bachelor', 'Selling Sunset', 'Emily in Paris', 'Bridgerton', 'The Kardashians'].map((show) => (
         <li key={show}>
           <Link to="/shows" className="text-sm text-gray-400 hover:text-white transition-colors">
             {show}
