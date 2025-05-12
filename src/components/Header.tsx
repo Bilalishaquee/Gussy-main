@@ -79,7 +79,7 @@ const Header: React.FC<HeaderProps> = React.memo(({
         )}
 
         {/* Desktop navigation - using React.memo for links */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8" style={{ fontFamily: "'Afacad', serif" }}>
  
           <MemoizedNavLink to="/ShowsFindr" className={hoverColor}>Shows</MemoizedNavLink>
           <MemoizedNavLink to="/celeb" className={hoverColor}>Celebrities</MemoizedNavLink>

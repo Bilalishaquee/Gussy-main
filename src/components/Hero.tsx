@@ -52,8 +52,9 @@ const Hero: React.FC = () => {
           <button
   className="text-black px-6 py-2 sm:px-10 sm:py-3 rounded-full font-medium transition-all duration-300 mb-4 sm:mb-0"
   style={{
-    background: 'linear-gradient(to right, #b87d2e, #f1d3a0, #b87d2e)',
+    background: 'linear-gradient(to right, #b87d2e, #f1d3a0, #b87d2e)',fontFamily: "'Afacad', serif"
   }}
+
 >
   See More Outfits
 </button>

@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   onClick 
 }) => {
-  const baseClasses = "font-medium rounded-full transition-all duration-300 inline-block text-center";
+  const baseClasses = "font-medium font-['Afacad'] rounded-full transition-all duration-300 inline-block text-center";
   
   const variantClasses = {
     primary: "bg-gradient-to-r from-[#b87d2e] via-[#f1d3a0] to-[#b87d2e] hover:from-amber-700 hover:via-yellow-500 hover:to-amber-700 text-black",
