@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import mainLogo from '/src/Assets/gussy.png';
 import secondaryLogo from '/src/Assets/logo.png';
 
+
 // Preload logos (removed unused variable)
 
 interface HeaderProps {

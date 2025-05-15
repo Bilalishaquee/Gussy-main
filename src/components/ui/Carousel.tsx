@@ -19,14 +19,14 @@ const Carousel = <T,>({
   );
 
   return (
-    <div className="flex gap-4 overflow-hidden w-full">
-      {slicedItems.map((item, index) => (
+    <div className="flex gap-4 w-full h-full">
+      {slicedItems.map((item, idx) => (
         <div
-          key={index}
-          className="w-full"
-          style={{ flex: `0 0 ${100 / visibleSlides}% `}}
+          key={idx}
+          className="w-full h-full flex-shrink-0"
+          style={{ flex: `0 0 ${100 / visibleSlides}%` }}
         >
-          {renderItem(item, activeIndex + index)}
+          {renderItem(item, activeIndex + idx)}
         </div>
       ))}
     </div>
