@@ -1,14 +1,12 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Search } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import mainLogo from '/src/Assets/gussy.png';
 import secondaryLogo from '/src/Assets/logo.png';
-
-
-// Preload logos (removed unused variable)
+import bgImage from '/src/Assets/bg.png';
 
 interface HeaderProps {
-  variant?: 'light' | 'dark';
+  variant?: 'light' | 'dark' | 'darkThreePart';
   hideLogo?: boolean;
   useSecondaryLogo?: boolean;
 }
@@ -20,15 +18,23 @@ const Header: React.FC<HeaderProps> = React.memo(({
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   // Memoize all computed styles
   const { textColor, bgColor, borderColor, searchIconColor, hoverColor } = useMemo(() => ({
     textColor: variant === 'light' ? 'text-black' : 'text-white',
-    bgColor: variant === 'light' ? 'bg-white' : 'bg-black ',
+    bgColor: isHomePage 
+      ? '' // Empty for home page as we'll use background image
+      : variant === 'light' 
+        ? 'bg-white' 
+        : variant === 'darkThreePart'
+          ? 'bg-gradient-to-r from-[#0e0d0e] via-[#191919] to-[#201f1e]'
+          : 'bg-black',
     borderColor: variant === 'light' ? 'border-gray-200' : 'border-gray-700',
     searchIconColor: variant === 'light' ? 'text-gray-500' : 'text-gray-400',
     hoverColor: variant === 'light' ? 'hover:text-gray-600' : 'hover:text-gray-300'
-  }), [variant]);
+  }), [variant, isHomePage]);
 
   // Memoize logo properties
   const logoProps = useMemo(() => ({
@@ -48,8 +54,13 @@ const Header: React.FC<HeaderProps> = React.memo(({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isMenuOpen]);
 
+  // Mobile always has black background
+  const mobileBgColor = 'bg-black';
+
   return (
-    <header className={`sticky top-0 z-50 ${bgColor} ${textColor} py-4 ${variant === 'light' ? 'border-b' : ''}`}>
+    <header 
+      className={`sticky top-0 z-50 ${bgColor} ${textColor} py-4 ${variant === 'light' ? 'border-b' : ''} ${isHomePage ? 'bg-black md:bg-cover md:bg-center-top md:bg-no-repeat md:bg-[url(/src/Assets/bg.png)]' : ''}`}
+    >
       <div className="relative container mx-auto px-4 flex justify-between items-center">
         {/* Mobile menu button */}
         <button 
@@ -73,15 +84,14 @@ const Header: React.FC<HeaderProps> = React.memo(({
                 alt="Logo" 
                 style={{ height: logoProps.height }} 
                 className="w-auto"
-                loading="eager" // Force eager loading
+                loading="eager"
               />
             </Link>
           </div>
         )}
 
-        {/* Desktop navigation - using React.memo for links */}
+        {/* Desktop navigation */}
         <nav className="hidden md:flex space-x-8" style={{ fontFamily: "'Afacad', serif" }}>
- 
           <MemoizedNavLink to="/ShowsFindr" className={hoverColor}>Shows</MemoizedNavLink>
           <MemoizedNavLink to="/celeb" className={hoverColor}>Celebrities</MemoizedNavLink>
           <MemoizedNavLink to="/fashion" className={hoverColor}>Shop All</MemoizedNavLink>
@@ -99,11 +109,11 @@ const Header: React.FC<HeaderProps> = React.memo(({
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - always black background */}
       {isMenuOpen && (
         <MobileMenu 
           ref={menuRef} 
-          bgColor={bgColor} 
+          bgColor={mobileBgColor}
           textColor={textColor} 
           borderColor={borderColor}
           searchIconColor={searchIconColor}
@@ -114,7 +124,7 @@ const Header: React.FC<HeaderProps> = React.memo(({
   );
 });
 
-// Optimized mobile menu component
+// Mobile menu component
 const MobileMenu = React.forwardRef<HTMLDivElement, {
   bgColor: string;
   textColor: string;
